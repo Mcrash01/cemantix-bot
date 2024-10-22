@@ -23,7 +23,7 @@ async function handler(_req: Request): Promise<Response> {
   console.log(guess);
 
   const similarityRequestBody = JSON.stringify({
-    word1: guess,
+    word1: "centrale",
     word2: "supelec",
   });
 
