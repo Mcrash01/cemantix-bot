@@ -50,9 +50,12 @@ async function handler(_req: Request): Promise<Response> {
     }
 
     const result = await response.json();
+    // Transformer la réponse pour qu'elle soit au format attendu par le front-end
+    const value = parseFloat(result.result); // Assume que `result` a la forme { result: "0.18" }
+
 
     console.log(result);
-    return new Response(JSON.stringify(result), {
+    return new Response(JSON.stringify({value: value}), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
