@@ -19,7 +19,7 @@ async function handler(_req: Request): Promise<Response> {
   headers.append("Content-Type", "application/json");
 
   const url: string = _req.url;
-  const guess: string = url.split("/")[ -1];
+  const guess: string = url.split("/").pop() || "";
   console.log(url, guess); 
 
   const similarityRequestBody = JSON.stringify({
