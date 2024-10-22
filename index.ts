@@ -20,7 +20,7 @@ async function handler(_req: Request): Promise<Response> {
 
   const url: string = _req.url;
   const guess: string = url.split("/")[ -1];
-  console.log(url, guess);
+  console.log(url, guess); 
 
   const similarityRequestBody = JSON.stringify({
     word1: "centrale",
